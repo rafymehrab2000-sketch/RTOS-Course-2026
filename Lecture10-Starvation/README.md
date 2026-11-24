@@ -151,7 +151,7 @@ t=13500 ms | Task\_Hog: BUSY  | Task\_Low progress: +46
 
 ```
 
-**Comparison:** During BUSY, Task\_Low now makes progress of about FILL IN per 500 ms instead of +0. During SLEEP it is still about +500.
+**Comparison:** During BUSY, Task\_Low now makes progress of about +45 to +46 per 500 ms instead of +0. During SLEEP it is still about +500.
 
 **Why Task\_Low can now run:** Every 10 ms Task\_Hog calls `vTaskDelay(1)` and moves to the Blocked state for one tick. While it is blocked, Task\_Low is the highest-priority Ready task on core 1, so the scheduler runs it. Task\_Hog still uses most of the CPU, but no longer all of it.
 
