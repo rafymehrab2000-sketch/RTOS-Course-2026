@@ -106,11 +106,11 @@ Task\_L inherits priority 3 from Task\_H while Task\_H is waiting for the mutex.
 
 |Observation|Binary semaphore (USE\_MUTEX 0)|Mutex (USE\_MUTEX 1)|
 |-|-|-|
-|Task\_H waiting time|FILL IN ms (predicted \~1200)|FILL IN ms (predicted \~200)|
-|Task\_L printed priority|FILL IN (predicted 1)|FILL IN (predicted 3 while H waits)|
-|Completion order|FILL IN (predicted M, L, H)|FILL IN (predicted L, H, M)|
-|Does Task\_M delay Task\_L?|Yes / No|Yes / No|
-|Does priority inheritance occur?|Yes / No|Yes / No|
+|Task\_H waiting time|1200 ms|200 ms|
+|Task\_L printed priority|1|3 (while H waits)|
+|Completion order|M, L, H|L, H, M|
+|Does Task\_M delay Task\_L?|Yes|No|
+|Does priority inheritance occur?|No|Yes|
 
 **Compared with my predictions:** Both results matched my predictions exactly: about 1200 ms of waiting with the binary semaphore and about 200 ms with the mutex. With the mutex, Task\_L's printed priority changed from 1 to 3, which proves that it inherited Task\_H's priority.
 
